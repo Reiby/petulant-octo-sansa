@@ -1,0 +1,16 @@
+@EventHandler
+  public void onPlayerJoinEvent(PlayerJoinEvent ev){
+		Player p = ev.getPlayer();
+		 int Coins = inc.getCoins(p.getName());
+		 ScoreboardManager manager = Bukkit.getScoreboardManager();
+			org.bukkit.scoreboard.Scoreboard board = manager.getNewScoreboard();
+			Objective sb = board.registerNewObjective("test", "dummy");
+			sb.setDisplaySlot(DisplaySlot.SIDEBAR);
+			sb.setDisplayName("§4FirstBloodPVP");
+		    Score score = sb.getScore(Bukkit.getOfflinePlayer("§eCoins:")); 
+		    score.setScore(Coins);
+		    p.setScoreboard(board);
+		
+		
+		
+	}
