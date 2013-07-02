@@ -1,16 +1,25 @@
 @EventHandler
   public void onPlayerJoinEvent(PlayerJoinEvent ev){
-		Player p = ev.getPlayer();
-		 int Coins = inc.getCoins(p.getName());
-		 ScoreboardManager manager = Bukkit.getScoreboardManager();
-			org.bukkit.scoreboard.Scoreboard board = manager.getNewScoreboard();
-			Objective sb = board.registerNewObjective("test", "dummy");
-			sb.setDisplaySlot(DisplaySlot.SIDEBAR);
-			sb.setDisplayName("§4FirstBloodPVP");
-		    Score score = sb.getScore(Bukkit.getOfflinePlayer("§eCoins:")); 
-		    score.setScore(Coins);
-		    p.setScoreboard(board);
-		
+				Player p = ev.getPlayer();//Player P bekommen
+			 long Zeit = 0;//Wie viel Zeit noch über ist
+			 int Leben = 0;//Wie viele Leben noch über sind
+			 int Terroristen = 0; //Wie viele Terroristen noch Leben
+			 int CIA = 0; //Wie viele CIA Leute noch Leben.
+			 ScoreboardManager manager = Bukkit.getScoreboardManager();
+				org.bukkit.scoreboard.Scoreboard board = manager.getNewScoreboard();
+				Objective sb = board.registerNewObjective("test", "dummy");
+				sb.setDisplaySlot(DisplaySlot.SIDEBAR);
+				sb.setDisplayName("Header");//Wert aus Config + Hier Status am besten einbinden. :)
+			    Score score = sb.getScore(Bukkit.getOfflinePlayer("§eZeit übrig:")); 
+			    score.setScore(Zeit);
+			    p.setScoreboard(board);
+			    Score score1 = sb.getScore(Bukkit.getOfflinePlayer("Terroristen Live")); 
+			    score1.setScore(Leben);
+			    Score score2 = sb.getScore(Bukkit.getOfflinePlayer("Terroristen:")); 
+			    score2.setScore(Terroristen);
+			    Score score3 = sb.getScore(Bukkit.getOfflinePlayer("CIA::")); 
+			    score3.setScore(CIA);
+			    p.setScoreboard(board);
 		
 		
 	}
